@@ -19,7 +19,12 @@ import ReactTypeahead from "@jdlehman/react-typeahead";
 function MyComponent({typeaheadUrl}) {
   return (
     <div>
-      <ReactTypeahead apiUrl="https://determined-limpet.glitch.me" numResults={20} delayType="throttle" delayTime={100}>
+      <ReactTypeahead
+        apiUrl={typeaheadUrl}
+        numResults={20}
+        delayType="throttle"
+        delayTime={100}
+      >
         {results => {
           return results.map(result => <div key={result.id}>{result.value}</div>)
         }}
